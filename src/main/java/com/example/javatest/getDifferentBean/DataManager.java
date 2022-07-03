@@ -39,8 +39,6 @@ public class DataManager implements ApplicationContextAware, InitializingBean {
      * @param rankHandlers
      */
     public DataManager(List<AbstractDataHandler> rankHandlers) {
-
-        ImmutableMap
         rankHandlers.forEach(rankHandler -> handlerMap.put(rankHandler.getDataSourceEnum(), rankHandler));
         System.out.println(rankHandlers);
     }
