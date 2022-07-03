@@ -1,0 +1,8 @@
+com.example.javatest.spi.v3.DemoDao=\
+  com.example.javatest.spi.v3.impl.DemoOracleDaoImpl,\
+  com.example.javatest.spi.v3.impl.DemoMysqlDaoImpl
+
+com.example.javatest.spi.v4.annotation.EnableJdbc=\
+  com.example.javatest.spi.v4.H2JdbcConfiguration,\
+  com.example.javatest.spi.v4.MysqlJdbcConfiguration,\
+  com.example.javatest.spi.v4.OracleJdbcConfiguration
