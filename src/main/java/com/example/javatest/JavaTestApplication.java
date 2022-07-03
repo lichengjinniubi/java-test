@@ -10,7 +10,7 @@ public class JavaTestApplication {
 
         SpringApplication.run(JavaTestApplication.class, args);
 
-        System.out.println(888888);
+        System.out.println(8999988);
     }
 
 }
