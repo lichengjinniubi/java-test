@@ -1,15 +1,23 @@
 package com.example.javatest.AOPV2.component;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
 
 @Aspect
 @Component
 public class Logger {
 
     @Before("defaultPoint()")
-    public void beforePrint() {
+    public void beforePrint(JoinPoint joinPoint) {
+        System.out.println(joinPoint.getTarget());
+        System.out.println(joinPoint.getThis());
+        System.out.println(Arrays.toString(joinPoint.getArgs()));
+        System.out.println(joinPoint.getSignature());
+        System.out.println(joinPoint.getSignature().getClass());
         System.out.println("Logger beforePrint run ......");
     }
 
@@ -46,7 +54,7 @@ public class Logger {
      * @return
      * @throws Throwable
      */
-    @Around("execution(public * com.example.javatest.AOPV2.service.FinanceService.*(double))")
+    @Around("execution(public * com.example.javatest.AOPV2.service.FinanceService.addMoneyV2(int))")
     public Object aroundPrint(ProceedingJoinPoint joinPoint) throws Throwable{
         System.out.println("Logger aroundPrint before run ......");
         try {

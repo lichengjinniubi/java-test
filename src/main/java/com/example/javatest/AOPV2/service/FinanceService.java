@@ -3,6 +3,8 @@ package com.example.javatest.AOPV2.service;
 import com.example.javatest.AOPV2.component.Log;
 import org.springframework.stereotype.Component;
 
+import java.sql.DriverManager;
+
 @Component
 public class FinanceService {
 
@@ -18,7 +20,6 @@ public class FinanceService {
 
     public double subtractMoney(double money) throws Exception{
         System.out.println("FinanceService 付钱 === " + money);
-
         return money;
     }
 
