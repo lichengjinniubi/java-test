@@ -1,7 +1,6 @@
 package com.example.javatest.transactionv2.service;
 
 import com.example.javatest.transaction.bean.User;
-import com.example.javatest.transaction.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionStatus;
@@ -13,8 +12,6 @@ import java.util.List;
 @Service
 public class UserService {
 
-    @Autowired
-    UserDao userDao;
 
     @Autowired
     TransactionTemplate transactionTemplate;
@@ -27,11 +24,7 @@ public class UserService {
         transactionTemplate.execute(new TransactionCallbackWithoutResult() {
             @Override
             protected void doInTransactionWithoutResult(TransactionStatus status) {
-                userDao.save(user);
 
-                int i = 1 / 0;
-
-                List<User> userList = userDao.findAll();
             }
         });
     }
