@@ -1,6 +1,6 @@
 package com.example.javatest.transactionv2;
 
-import com.example.javatest.transaction.service.UserService;
+import com.example.javatest.transactionv2.service.UserService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class JdbcTemplateStartApplication {
