@@ -10,7 +10,7 @@ public class Client {
         Partner partner = PartnerPlatform.getPartner(400);
         System.out.println(partner);
         partner.receiveMoney(200);
-        partner.playWith(player);
+        //partner.playWith(player);
     
 //        partner.receiveMoney(200);
 //        partner.playWith(player);

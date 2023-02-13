@@ -35,12 +35,13 @@ public class PartnerPlatform {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         // 如果在付钱时没给够，则标记budget为异常值
+                        System.out.println(method);
                         if (method.getName().equals("receiveMoney")) {
                             int money = (int) args[0];
                             this.status = money >= budget;
                         }
 
-                        //System.out.println(this.status);
+                        System.out.println(this.status);
                         if (status) {
                             return method.invoke(partner, args);
                         }
