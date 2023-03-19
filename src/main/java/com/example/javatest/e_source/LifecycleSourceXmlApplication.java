@@ -8,7 +8,7 @@ public class LifecycleSourceXmlApplication {
     
     public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("lifecycle/bean-source.xml");
-        //ctx.setConfigLocation("lifecycle/bean-source.xml");
+        ctx.setConfigLocation("lifecycle/bean-source.xml");
     
         System.out.println("================准备刷新IOC容器==================");
     
