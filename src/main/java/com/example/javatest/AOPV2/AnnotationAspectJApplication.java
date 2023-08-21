@@ -4,6 +4,8 @@ import com.example.javatest.AOPV2.config.AspectJAOPConfiguration;
 import com.example.javatest.AOPV2.service.FinanceService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.concurrent.Executor;
+
 public class AnnotationAspectJApplication {
 
     public static void main(String[] args) {

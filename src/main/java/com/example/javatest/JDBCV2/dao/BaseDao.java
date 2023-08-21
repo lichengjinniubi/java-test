@@ -3,12 +3,16 @@ package com.example.javatest.JDBCV2.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
 public abstract class BaseDao {
 
-    @Autowired
+   // @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private DataSource dataSource;
 
     public JdbcTemplate getJdbcTemplate() {
         return jdbcTemplate;
@@ -18,7 +22,8 @@ public abstract class BaseDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void setDataSource(DataSource dataSource) {
+    @PostConstruct
+    public void setDataSource() {
         if (this.jdbcTemplate == null) {
             this.jdbcTemplate = new JdbcTemplate(dataSource);
         }

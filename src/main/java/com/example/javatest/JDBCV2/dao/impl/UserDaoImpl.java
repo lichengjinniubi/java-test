@@ -15,13 +15,6 @@ import java.util.List;
 @Service
 public class UserDaoImpl extends BaseDao implements UserDao {
 
-    @Autowired
-    private DataSource dataSource;
-
-
-    public UserDaoImpl(DataSource dataSource) {
-        this.setDataSource(dataSource);
-    }
 
     @Override
     public void save(User user) {
